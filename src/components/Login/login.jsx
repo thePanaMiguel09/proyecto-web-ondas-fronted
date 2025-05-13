@@ -1,6 +1,7 @@
 import React from "react";
 import "./login.css";
 import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -44,12 +45,12 @@ function Login() {
           <button className="boton-login">Iniciar sesión</button>
 
           <p className="texto-registro">
-            ¿No tienes una cuenta? <a href="#">Regístrate</a>
+            ¿No tienes una cuenta? <Link to="/registro">Regístrate</Link>
           </p>
 
           <div className="separador">
             <span className="linea-separador"></span>
-            <span className="texto-separador">O registrate con</span>
+            <span className="texto-separador">O regístrate con</span>
             <span className="linea-separador"></span>
           </div>
 
@@ -65,6 +66,7 @@ function Login() {
 }
 
 export default Login;
+
 
 
 

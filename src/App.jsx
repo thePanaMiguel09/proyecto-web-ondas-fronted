@@ -1,17 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/Login/login";
-import Registro from "./components/Registrar/registro.jsx"
+import Login from "./features/auth/Pages/Login/Login";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/registro" element={<Registro />} />
-      </Routes>
-    </Router>
+    <div className="h-dvh w-dvw flex items-center justify-center text-2xl font-bold">
+      <Login />
+    </div>
   );
 }
 
 export default App;
-

@@ -2,6 +2,7 @@ import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { LuGitPullRequestCreate } from "react-icons/lu";
 import { MdOutlineAssessment } from "react-icons/md";
+import { MdOutlineEdit } from "react-icons/md";
 
 import Card from "../Components/Card/Card";
 
@@ -10,38 +11,38 @@ function GestionColegios() {
     <div className="w-[80%] h-full">
       <div className="w-full h-[10%]">
         <div className="text-4xl font-bold text-white ml-5 mt-5">
-          Gestión de Proyectos
+          Gestión de Instituciones
         </div>
         <div className="ml-5 mt-1 text-secondary font-light">
-          Administra los proyectos
+          Administra las instituciones
         </div>
       </div>
       <div className="w-full h-[90%] flex  flex-wrap justify-center items-center gap-2">
         <Card
-          title="Crear Proyecto"
-          description="Crea nuevos proyectos"
-          titleButton="Crear Proyecto"
+          title="Crear Institución"
+          description="Crea nuevas instituciones"
+          titleButton="Crear Institución"
           icon={LuGitPullRequestCreate}
           color="blue"
         />
         <Card
-          title="Evaluar Proyectos"
-          description="Evalua proyectos de las instituciones"
-          titleButton="Evaluar Proyecto"
-          icon={MdOutlineAssessment}
+          title="Editar Instituciones"
+          description="Edita información de tus instituciones"
+          titleButton="Editar Insticución"
+          icon={MdOutlineEdit}
           color="purple"
         />
         <Card
-          title="Eliminar Proyecto"
-          description="Elimina proyectos de tus instituciones"
-          titleButton="Eliminar Proyecto"
+          title="Eliminar Instituciones"
+          description="Elimina instituciones en el sistema"
+          titleButton="Eliminar Institución"
           icon={MdDelete}
           color="red"
         />
         <Card
-          title="Consultar Proyecto"
-          description="Consulta información de tus proyectos"
-          titleButton="Consultar Proyectos"
+          title="Consultar Instituciones"
+          description="Consulta información de tus instituciones"
+          titleButton="Consultar Institucion"
           icon={FaSearch}
           color="green"
         />

@@ -12,7 +12,7 @@ function GestionUsuarios() {
           Gestión de Usuarios
         </div>
         <div className="ml-5 mt-1 text-secondary font-light">
-          Administra los usuaios del sistema
+          Administra los usuaios de tu institución
         </div>
       </div>
       <div className="w-full h-[90%] flex  flex-wrap justify-center items-center gap-2">

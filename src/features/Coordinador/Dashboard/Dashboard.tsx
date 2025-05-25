@@ -12,6 +12,7 @@ import UserTable from './components/UserTable';
 import ColForm from './components/ColForm';
 import ColTable from './components/ColTable';
 import ProTable from './components/ProTable';
+import UserManagement from './components/UserManagement';
 
 interface User {
   id: number;

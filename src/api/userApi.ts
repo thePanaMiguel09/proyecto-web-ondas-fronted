@@ -11,7 +11,7 @@ export const createUser = async (user: any) => {
 };
 
 export const updateUser = async (id: string, user: any) => {
-  const res = await api.put(`/usuarios/${id}`, user);
+  const res = await api.patch(`/usuarios/${id}`, user);
   return res.data;
 };
 

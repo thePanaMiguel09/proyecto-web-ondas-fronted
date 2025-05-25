@@ -10,7 +10,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   color?: "blue" | "purple" | "red" | "green" | "orange";
 }
 
-const Card: React.FC<Props> = ({
+const CustomCard: React.FC<Props> = ({
   title,
   icon: Icon,
   titleButton,
@@ -35,4 +35,4 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default Card;
+export default CustomCard;

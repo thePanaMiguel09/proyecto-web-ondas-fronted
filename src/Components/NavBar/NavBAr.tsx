@@ -1,4 +1,4 @@
-import CardsFunctions from "./CardsFunctions";
+import CardsFunctions from "../CardNav/CardNav";
 import Profile from "../Profile/Profile";
 
 import { CiUser } from "react-icons/ci";

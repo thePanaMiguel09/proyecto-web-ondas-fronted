@@ -1,4 +1,4 @@
-import Card from "../Components/Card/Card";
+import Card from "../../../Components/CustomCard/CustomCard";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";

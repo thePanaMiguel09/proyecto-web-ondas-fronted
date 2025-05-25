@@ -1,10 +1,9 @@
 import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { LuGitPullRequestCreate } from "react-icons/lu";
-import { MdOutlineAssessment } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
 
-import Card from "../Components/Card/Card";
+import Card from "../../../Components/CustomCard/CustomCard";
 
 function GestionColegios() {
   return (
@@ -23,7 +22,7 @@ function GestionColegios() {
           description="Crea nuevas instituciones"
           titleButton="Crear Institución"
           icon={LuGitPullRequestCreate}
-          color="blue"
+          color="purple"
         />
         <Card
           title="Editar Instituciones"

@@ -8,6 +8,7 @@ import SignupPage from "./Pages/Signup/SignupPage";
 import Home from "./Pages/Home/HomePage";
 
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import GestorDocente from "./Pages/ManageTeacher/GestorDocente";
 
 function App() {
   return (
@@ -19,6 +20,14 @@ function App() {
         element={
           <ProtectedRoute>
             <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/gestor-docente"
+        element={
+          <ProtectedRoute>
+            <GestorDocente />
           </ProtectedRoute>
         }
       />

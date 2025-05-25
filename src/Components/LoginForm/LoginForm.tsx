@@ -25,7 +25,8 @@ function LoginForm() {
 
       if (result && result.usuario && result.token) {
         setAuth(result.token, result.usuario); // 👈 guardamos en el store
-        navigate("/home"); // 👈 redirigimos
+        console.log("Entra al handle");
+        navigate("/"); // 👈 redirigimos
       } else {
         alert(result?.error || "Error desconocido al iniciar sesión");
       }

@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="text-center pt-8 mt-8 border-t border-gray-700">
                 <p className="text-gray-500 text-sm">
-                    Donde los proyectos toman vida, juntos.
+                    Donde los proyectos toman vida, juntos
                 </p>
             </div>
         </footer>

@@ -1,6 +1,7 @@
 import MainHOme from "../../Components/MainHome/MainHome";
 import CardPage from "../../Components/CardPage/CardPage";
 import NavbarP from "../../Components/NavHome/NavHome";
+import Footer from "../../Components/footer/footer";
 import { useAuthStore } from "../../store/authSore";
 
 const navItems = [
@@ -71,8 +72,10 @@ function Home() {
             link="https://www.infobae.com/educacion/2024/01/26/las-10-herramientas-de-inteligencia-artificial-que-seran-tendencia-en-el-2024/"
             imageSrc="https://www.infobae.com/resizer/v2/JRH5GWIPRFFTFOYNM67YGBQLBQ.jpeg?auth=bc3970e30f2334f34572715fad455bcaa98af3519794f2e1eed80e2ec32c2521&smart=true&width=992&height=661&quality=85"
           />
+          <p></p>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

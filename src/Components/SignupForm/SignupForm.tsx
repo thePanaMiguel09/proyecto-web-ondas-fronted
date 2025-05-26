@@ -77,117 +77,133 @@ function SignupForm() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full h-full flex flex-col justify-center text-secondary"
+  onSubmit={handleSubmit(onSubmit)}
+  className="w-full h-full flex flex-col justify-center text-secondary "
+>
+  <div className="text-center h-[15%] w-full">
+    <h2 className="text-4xl md:text-5xl font-bold text-primary tracking-wide py-10">
+      REGISTRARSE
+    </h2>
+    
+  </div>
+
+  {/* Muestra errores */}
+  {Object.values(errors).length > 0 && (
+    <div className="w-full text-primary text-sm px-4 py-2">
+      <ul className="list-disc pl-5">
+        {Object.entries(errors).map(([key, err]: any) => (
+          <li key={key}>{err.message}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <div className="h-[80%] flex flex-col justify-evenly">
+    <div className="w-full flex justify-evenly">
+      <div className="w-[40%] flex flex-col">
+        <label htmlFor="firstName" className="font-semibold text-gray-300">
+          Nombres
+        </label>
+        <input
+          id="firstName"
+          type="text"
+          placeholder="Ingresa tus nombres"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300 placeholder-gray-500"
+          {...register("nombres")}
+        />
+      </div>
+
+      <div className="w-[40%] flex flex-col">
+        <label htmlFor="lastName" className="font-semibold text-gray-300">
+          Apellidos
+        </label>
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Ingresa tus apellidos"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300 placeholder-gray-500"
+          {...register("apellidos")}
+        />
+      </div>
+    </div>
+
+    <div className="w-full flex flex-col items-center">
+      <div className="w-[87%] flex flex-col">
+        <label htmlFor="idType" className="font-semibold text-gray-300">
+          Tipo de Identificación
+        </label>
+        <select
+          id="idType"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300"
+          {...register("tipoIdentificacion")}
+        >
+          <option value="CC">Cédula</option>
+          <option value="TI">Tarjeta de Identidad</option>
+        </select>
+      </div>
+    </div>
+
+    <div className="w-full flex flex-col items-center">
+      <div className="w-[87%] flex flex-col">
+        <label htmlFor="idNumber" className="font-semibold text-gray-300">
+          Número de Identificación
+        </label>
+        <input
+          id="idNumber"
+          type="text"
+          placeholder="Ingresa tu número de identificación"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300 placeholder-gray-500"
+          {...register("numeroIdentificacion")}
+        />
+      </div>
+    </div>
+
+    <div className="w-full flex flex-col items-center">
+      <div className="w-[87%] flex flex-col">
+        <label htmlFor="email" className="font-semibold text-gray-300">
+          Correo Electrónico
+        </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Ingresa tu correo electrónico"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300 placeholder-gray-500"
+          {...register("email")}
+        />
+      </div>
+    </div>
+
+    <div className="w-full flex flex-col items-center">
+      <div className="w-[87%] flex flex-col">
+        <label htmlFor="password" className="font-semibold text-gray-300">
+          Contraseña
+        </label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Crea una contraseña segura"
+          className="mt-2 h-12 rounded-lg bg-gray-700 border-2 border-gray-600 px-4 text-base text-gray-300 placeholder-gray-500"
+          {...register("password")}
+        />
+      </div>
+    </div>
+  </div>
+
+  <div className="w-full h-[15%] flex flex-col items-center justify-center">
+    <button
+      type="submit"
+      className="w-[85%] h-12 bg-primary rounded-lg text-white text-lg font-semibold"
     >
-      <div className="text-center h-[15%] w-full">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary tracking-wide">
-          REGISTRARSE
-        </h2>
-        <p className="mt-2 text-sm md:text-base text-primary/70 font-light">
-          Crea una cuenta para acceder al sistema
-        </p>
-      </div>
-
-      {/* Muestra errores */}
-      {Object.values(errors).length > 0 && (
-        <div className="w-full text-primary text-sm px-4 py-2">
-          <ul className="list-disc pl-5">
-            {Object.entries(errors).map(([key, err]: any) => (
-              <li key={key}>{err.message}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <div className="h-[80%] flex flex-col justify-evenly">
-        <div className="w-full flex justify-evenly">
-          <div className="w-[40%]">
-            <label htmlFor="firstName">Nombres</label>
-            <input
-              id="firstName"
-              type="text"
-              className="w-full"
-              {...register("nombres")}
-            />
-          </div>
-          <div className="w-[40%]">
-            <label htmlFor="lastName">Apellidos</label>
-            <input
-              id="lastName"
-              type="text"
-              className="w-full"
-              {...register("apellidos")}
-            />
-          </div>
-        </div>
-
-        <div className="w-full h-[15%] flex flex-col items-center">
-          <div className="w-[87%] h-full flex flex-col justify-between">
-            <label htmlFor="idType">Tipo de Identidicación</label>
-            <select
-              id="idType"
-              className="w-full"
-              {...register("tipoIdentificacion")}
-            >
-              <option value="CC">Cédula</option>
-              <option value="TI">Tarjeta de Identidad</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="w-full h-[15%] flex flex-col items-center">
-          <div className="w-[87%]">
-            <label htmlFor="idNumber">Número de Identificación</label>
-            <input
-              id="idNumber"
-              type="text"
-              className="w-full"
-              {...register("numeroIdentificacion")}
-            />
-          </div>
-        </div>
-
-        <div className="w-full h-[15%] flex flex-col items-center">
-          <div className="w-[87%]">
-            <label htmlFor="email">Correo Electrónico</label>
-            <input
-              id="email"
-              type="email"
-              className="w-full"
-              {...register("email")}
-            />
-          </div>
-        </div>
-
-        <div className="w-full h-[15%] flex flex-col items-center justify-between">
-          <div className="w-[87%]">
-            <label htmlFor="password">Contraseña</label>
-            <input
-              id="password"
-              type="password"
-              className="w-full"
-              {...register("password")}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full h-[15%] flex flex-col items-center justify-center">
-        <button
-          type="submit"
-          className="w-[85%] h-12 bg-primary rounded-lg text-white text-lg font-semibold"
-        >
-          Crear cuenta
-        </button>
-        <span
-          className="text-sm font-light text-primary/70 hover:underline cursor-pointer"
-          onClick={() => navigate("/")}
-        >
-          ¿Ya tienes una cuenta? Inicia sesión
-        </span>
-      </div>
-    </form>
+      Crear cuenta
+    </button>
+    <span
+      className="text-sm font-light text-primary/70 hover:underline cursor-pointer"
+      onClick={() => navigate("/")}
+    >
+      ¿Ya tienes una cuenta? Inicia sesión
+    </span>
+  </div>
+</form>
   );
 }
 

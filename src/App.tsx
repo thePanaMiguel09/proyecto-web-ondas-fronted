@@ -6,6 +6,7 @@ import SignupPage from "./Pages/Signup/SignupPage";
 import Home from "./Pages/Home/HomePage";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import GestorDocente from "./Pages/ManageTeacher/GestorDocente";
+import DashboardEs from "./Pages/Estudiante/Dashboard/DashboardEs";
 
 function App() {
   return (
@@ -25,6 +26,22 @@ function App() {
         element={
           <ProtectedRoute>
             <GestorDocente />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/mis-proyectos"
+        element={
+          <ProtectedRoute>
+            <DashboardEs />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/gestor-coordinador"
+        element={
+          <ProtectedRoute>
+            <DashboardEs />
           </ProtectedRoute>
         }
       />

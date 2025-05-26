@@ -4,7 +4,7 @@ import TarjetaCrearProyecto from "./Components/Cards/CreateProject";
 import ViewProjects from "./Components/Cards/ViewProjects";
 
 function GestorDocente() {
-  const { usuario, logout, token } = useAuthStore();
+  const { usuario, logout } = useAuthStore();
   const navigate = useNavigate();
 
   return (

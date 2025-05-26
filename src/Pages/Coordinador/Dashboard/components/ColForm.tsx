@@ -1,24 +1,30 @@
-import React from 'react';
+import React from "react";
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   TextField,
   DialogActions,
-  Button
-} from '@mui/material';
+  Button,
+} from "@mui/material";
 
 interface Props {
   open: boolean;
   onClose: () => void;
-  onSave: (data: { nombre: string; ciudad: string; departamento: string }) => void;
+  onSave: (data: {
+    nombre: string;
+    ciudad: string;
+    departamento: string;
+  }) => void;
   initialData?: { nombre: string; ciudad: string; departamento: string };
 }
 
 export default function ColForm({ open, onClose, onSave, initialData }: Props) {
-  const [nombre, setNombre] = React.useState(initialData?.nombre || '');
-  const [ciudad, setCiudad] = React.useState(initialData?.ciudad || '');
-  const [departamento, setDepartamento] = React.useState(initialData?.departamento || '');
+  const [nombre, setNombre] = React.useState(initialData?.nombre || "");
+  const [ciudad, setCiudad] = React.useState(initialData?.ciudad || "");
+  const [departamento, setDepartamento] = React.useState(
+    initialData?.departamento || ""
+  );
 
   React.useEffect(() => {
     if (initialData) {
@@ -26,9 +32,9 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
       setCiudad(initialData.ciudad);
       setDepartamento(initialData.departamento);
     } else {
-      setNombre('');
-      setCiudad('');
-      setDepartamento('');
+      setNombre("");
+      setCiudad("");
+      setDepartamento("");
     }
   }, [initialData]);
 
@@ -45,13 +51,13 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
       onClose={onClose}
       PaperProps={{
         style: {
-          backgroundColor: '#1e293b',
-          color: '#fff',
-        }
+          backgroundColor: "#1e293b",
+          color: "#fff",
+        },
       }}
     >
-      <DialogTitle style={{ color: '#fff' }}>
-        {initialData ? 'Editar Colegio' : 'Crear Colegio'}
+      <DialogTitle style={{ color: "#fff" }}>
+        {initialData ? "Editar Colegio" : "Crear Colegio"}
       </DialogTitle>
       <DialogContent>
         <TextField
@@ -60,13 +66,13 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
           margin="dense"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
-          InputLabelProps={{ style: { color: '#ccc' } }}
+          InputLabelProps={{ style: { color: "#ccc" } }}
           InputProps={{
             style: {
-              color: '#fff',
-              backgroundColor: '#334155',
+              color: "#fff",
+              backgroundColor: "#334155",
               borderRadius: 4,
-            }
+            },
           }}
         />
         <TextField
@@ -75,13 +81,13 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
           margin="dense"
           value={ciudad}
           onChange={(e) => setCiudad(e.target.value)}
-          InputLabelProps={{ style: { color: '#ccc' } }}
+          InputLabelProps={{ style: { color: "#ccc" } }}
           InputProps={{
             style: {
-              color: '#fff',
-              backgroundColor: '#334155',
+              color: "#fff",
+              backgroundColor: "#334155",
               borderRadius: 4,
-            }
+            },
           }}
         />
         <TextField
@@ -90,24 +96,24 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
           margin="dense"
           value={departamento}
           onChange={(e) => setDepartamento(e.target.value)}
-          InputLabelProps={{ style: { color: '#ccc' } }}
+          InputLabelProps={{ style: { color: "#ccc" } }}
           InputProps={{
             style: {
-              color: '#fff',
-              backgroundColor: '#334155',
+              color: "#fff",
+              backgroundColor: "#334155",
               borderRadius: 4,
-            }
+            },
           }}
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} style={{ color: '#ccc' }}>
+        <Button onClick={onClose} style={{ color: "#ccc" }}>
           Cancelar
         </Button>
         <Button
           onClick={handleSave}
           variant="contained"
-          style={{ backgroundColor: '#7B61FF', color: '#fff' }}
+          style={{ backgroundColor: "#7B61FF", color: "#fff" }}
         >
           Guardar
         </Button>
@@ -115,4 +121,3 @@ export default function ColForm({ open, onClose, onSave, initialData }: Props) {
     </Dialog>
   );
 }
-

@@ -30,17 +30,17 @@ export default function NavbarP({ title = "EduTech" }: NavbarPProps) {
     case "COORDINADOR":
       dynamicNavItem = {
         label: "Gestor de Coordinador",
-        href: "#gestor-coordinador",
+        href: "/gestor-coordinador",
       };
       break;
     case "DOCENTE":
       dynamicNavItem = {
-        label: "Gestor de Profesor",
-        href: "#gestor-profesor",
+        label: "Gestor de Docente",
+        href: "/gestor-docente",
       };
       break;
     case "ESTUDIANTE":
-      dynamicNavItem = { label: "Mis Proyectos", href: "#mis-proyectos" };
+      dynamicNavItem = { label: "Mis Proyectos", href: "/mis-proyectos" };
       break;
     default:
       dynamicNavItem = { label: "Servicios", href: "#servicios" };
@@ -67,7 +67,10 @@ export default function NavbarP({ title = "EduTech" }: NavbarPProps) {
             <a
               key={index}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                navigate(item.href);
+                setOpen(false);
+              }}
               className="hover:underline"
             >
               {item.label}
